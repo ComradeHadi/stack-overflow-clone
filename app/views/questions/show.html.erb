@@ -1,3 +1,5 @@
 <h1>Question:</h1>
 
 <h4><%= @question.text %></h4>
+
+<%= link_to "Answer Question", new_question_answer_path(@question) %>
