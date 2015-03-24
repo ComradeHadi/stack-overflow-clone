@@ -5,11 +5,13 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    @user = User.find(current_user)
+    @question = @user.questions.new
   end
 
   def create
-    @question = Question.new(question_params)
+    @user = User.find(current_user)
+    @question = @user.questions.new(question_params)
     if @question.save
       redirect_to questions_path
     else

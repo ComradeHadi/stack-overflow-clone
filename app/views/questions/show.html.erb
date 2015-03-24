@@ -1,10 +1,10 @@
-<h1>Question: <%= @question.text %></h1>
+<h1>Question: <%= @question.text %></h1><h2><%= find_question_user.email %></h2>
 
 <h4>Answers:</h4>
 
 <ul>
   <% @question.answers.each do |answer| %>
-    <li><%= answer.text %></li>
+    <li><%= answer.text %></li><h2><%= answer.user_id %></h2>
   <% end %>
 </ul>
 
