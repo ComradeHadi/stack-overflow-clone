@@ -1,7 +1,7 @@
-require 'rails-helper'
+require 'rails_helper'
 
 describe 'the log-in process' do
-  it 'logs a user in'
+  it 'logs a user in' do
     FactoryGirl.create(:user)
     visit log_in_path
     fill_in 'Email', with: 'test@test.com'
