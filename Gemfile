@@ -53,6 +53,8 @@ group :development, :test do
 
   gem 'capybara'
 
+  gem "letter_opener"
+
   gem 'shoulda-matchers'
 
   gem 'quiet_assets'
