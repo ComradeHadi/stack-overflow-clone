@@ -6,4 +6,10 @@ class UserMailer < ApplicationMailer
     @url = 'http://www.google.com'
     mail(to: @user.email, subject: 'test welcome email')
   end
+
+  def send_notification(user)
+    @user = user
+    @url = 'http://www.google.com'
+    mail(to: @user.email, subject: 'a user has answered your question')
+  end
 end
