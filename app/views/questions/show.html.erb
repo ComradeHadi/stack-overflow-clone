@@ -8,4 +8,6 @@
   <% end %>
 </ul>
 
-<%= link_to "Answer Question", new_question_answer_path(@question) %>
+<% if current_user.nil? == false %>
+  <%= link_to "Answer Question", new_question_answer_path(@question) %>
+<% end %>
