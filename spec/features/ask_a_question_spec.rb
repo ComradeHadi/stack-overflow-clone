@@ -6,6 +6,6 @@ describe 'the ask a question process' do
     click_on 'Ask Question'
     fill_in 'question_text', with: 'Why is the sky blue?'
     click_on 'Ask'
-    expect(page).to have_content 'Questions'
+    expect(page).to have_content 'Questions!'
   end
 end

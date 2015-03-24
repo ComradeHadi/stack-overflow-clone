@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>StackClone</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Home", root_path %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if current_user %>
-        <li><%= link_to current_user.email + " sign out", log_out_path %></li>
-        <% else %>
-        <li><%= link_to "Create user", new_user_path %></li>
-        <li><%= link_to "Sign in", log_in_path %></li>
-        <% end %>
-      </ul>
+  <head>
+    <title>StackClone</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Home", root_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+          <li><%= link_to current_user.email + " sign out", log_out_path %></li>
+          <% else %>
+          <li><%= link_to "Create user", new_user_path %></li>
+          <li><%= link_to "Sign in", log_in_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Shtack Shtoverflow</h1>
+      </div>
+
     </div>
-  </nav>
-
-  <div class="jumbotron">
     <div class="container">
-      <h1>Shtack Shtoverflow</h1>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+      <%= yield %>
     </div>
 
-  </div>
-  <div class="container">
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
-    <%= yield %>
-  </div>
-
-</body>
+  </body>
 </html>
